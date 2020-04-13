@@ -1,3 +1,4 @@
+// TIMEOUT
 console.log('a');
 let timmy = setTimeout(function () {
     console.log('b');
@@ -15,7 +16,7 @@ console.log('e');
 // a , e , b, d , c Those without settimeout will go first, then b goes because it was put on the stack before d and then d and c executes.
 
 // =========================
-
+// ASYNC
 let num = 0;
 
 async function increment() {
@@ -27,4 +28,27 @@ increment();
 num += 1;
 console.log(num);
 
-// Answer : 1, 2 the async function/promise causes a slight delay in execution;
+// Answer : 1, 2 the async function/promise causes a slight delay cuz it runs in the background and the other code executes;
+
+// =========================
+// REVEALING MODULE
+
+let myModule = (function () {
+    let data = [];
+
+    let _render = function () {
+
+    };
+    let _add = function () {
+
+    };
+
+    let _remove = function () {
+
+    };
+    return {
+        _render
+    }
+})();
+
+myModule._render();
